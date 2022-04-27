@@ -68,6 +68,7 @@ const ProductPage:NextPage<Props> = ({ product }) => {
         <Grid item xs={12} sm={ 7 }>
           <ProductSlideshow 
             images={ product.images }
+            
           />
         </Grid>
 

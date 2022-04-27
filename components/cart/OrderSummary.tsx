@@ -50,7 +50,6 @@ export const OrderSummary: FC<Props> = ({orderValues}) => {
         <Grid item xs={6} sx={{ mt:2 }} display='flex' justifyContent='end'>
             <Typography variant="subtitle1">{ currency.format(sumaryValues.total) }</Typography>
         </Grid>
-
     </Grid>
   )
 }

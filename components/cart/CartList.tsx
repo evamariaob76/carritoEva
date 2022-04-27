@@ -25,7 +25,6 @@ export const CartList: FC<Props> = ({ editable = false, products }) => {
 
     const productsToShow = products ? products : cart;
 
-
     return (
         <>
             {
@@ -37,7 +36,7 @@ export const CartList: FC<Props> = ({ editable = false, products }) => {
                                 <Link>
                                     <CardActionArea>
                                         <CardMedia 
-                                            image={ `/products/${ product.image }` }
+                                            image={  product.image  }
                                             component='img'
                                             sx={{ borderRadius: '5px' }}
                                         />
