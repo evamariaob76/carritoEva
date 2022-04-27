@@ -6,12 +6,10 @@ import { getToken } from "next-auth/jwt";
 export async function middleware( req: NextRequest | any, ev: NextFetchEvent ) {
 
     const session = await getToken ({req, secret: process.env.NEXTAUTH_URL});
-
     if(!session){
         const requestedPage= req.page.name;
         return NextResponse.redirect(`/auth/login?P=${requestedPage}`)
     }
-
     return NextResponse.next();
     //Autorización Next Auth
 
