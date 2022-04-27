@@ -8,7 +8,6 @@ import {  UiContext } from '../../context';
 export const AdminNavbar = () => {
 
     const { toggleSideMenu } = useContext( UiContext );
-
     return (
         <AppBar>
             <Toolbar>
