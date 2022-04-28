@@ -41,25 +41,25 @@ const AddressPage = () => {
     const router = useRouter();
     const { updateAddress} = useContext( CartContext );
 
-    const { register, handleSubmit, formState: { errors }, reset} = useForm<FormData>({
-       defaultValues:{
-        firstName : '',
-        lastName  :  '',
-        address   :  '',
-        address2  :  '',
-        zip       : '',
-        city      : '',
-        country   :  countries[0].code,
-        phone      : '',
-       }
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>({
+       defaultValues: {
+            firstName: '',
+            lastName: '',
+            address: '',
+            address2: '',
+            zip: '',
+            city: '',
+            country: countries[0].code,
+            phone: '',
+       } 
     });
 
     useEffect(() => {
-      reset(getAddressFromCookies())
-    
+        reset(getAddressFromCookies() );
 
     }, [reset])
     
+
 
     const onSubmitAddress = ( data: FormData ) => {
         updateAddress( data );
@@ -147,29 +147,29 @@ const AddressPage = () => {
                 </Grid>
                 
                 <Grid item xs={12} sm={ 6 }>
-                   { /*<FormControl fullWidth>*/}
+                    {/* <FormControl fullWidth> */}
                         <TextField
-                            //select
+                            // select
                             variant="filled"
                             label="País"
                             fullWidth
-                           // defaultValue={ Cookies.get('country') || countries[0].code }
+                            // defaultValue={ Cookies.get('country') || countries[0].code }
                             { ...register('country', {
                                 required: 'Este campo es requerido'
                             })}
                             error={ !!errors.country }
-                            // helperText={ errors.country?.message }
+                            helperText={ errors.country?.message }
                         />
-                            {
-                               /* countries.map( country => (
+                            {/* {
+                                countries.map( country => (
                                     <MenuItem 
                                         key={ country.code }
                                         value={ country.code }
                                     >{ country.name }</MenuItem>
                                 ))
-                           */ }
-                       { /*</TextField>*/}
-                  {/* </FormControl>*/}
+                            }
+                        </TextField> */}
+                    {/* </FormControl> */}
                 </Grid>
                 <Grid item xs={12} sm={ 6 }>
                     <TextField
