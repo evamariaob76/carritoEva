@@ -11,7 +11,10 @@ export async function middleware( req: NextRequest | any, ev: NextFetchEvent |nu
     if ( !session ) {
         const requestedPage = req.page.name;
         //return NextResponse.redirect(`/auth/login?p=${requestedPage}`);
-         return NextResponse.rewrite(new URL('/auth/login', req.url))
+      //  console.log(req.url + 'urllllllllll')
+      const url = req.nextUrl.clone()
+      url.pathname = '/auth/login'
+      return NextResponse.rewrite(url)
 
     }
 
