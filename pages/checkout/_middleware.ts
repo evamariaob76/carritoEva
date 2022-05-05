@@ -13,7 +13,7 @@ export async function middleware( req: NextRequest | any, ev: NextFetchEvent |nu
         //return NextResponse.redirect(`/auth/login?p=${requestedPage}`);
       //  console.log(req.url + 'urllllllllll')
       const url = req.nextUrl.clone()
-      url.pathname = '/auth/login'
+      url.pathname = '/auth/login';
       return NextResponse.rewrite(url)
 
     }
